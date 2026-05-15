@@ -3,395 +3,125 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Athenian Salon Delhi | Luxury Unisex Salon</title>
-  <meta name="description" content="Athenian Salon Delhi — Luxury unisex salon in South Extension I, New Delhi. Hair, nails, makeup, skin & bridal services. Book your appointment today.">
+  <title>Athenian Salon Delhi | Luxury Beauty & Wellness</title>
+  <meta name="description" content="Athenian Salon Delhi — South Extension's premier luxury unisex salon. Hair, skin, makeup, nails & bridal services by certified experts.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Sticky Mobile CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <a href="tel:+919220973268" class="sticky-cta-btn sticky-cta-call">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 1 7.18 12.84 12.84 0 0 0 7.18 1"/><path d="M14 2h6v6"/></svg>
+      Call
+    </a>
+    <a href="https://wa.me/919220973268" class="sticky-cta-btn sticky-cta-wa">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8.4 8.5z"/></svg>
+      WhatsApp
+    </a>
+  </div>
 
   <!-- Navigation -->
   <nav class="nav" id="nav">
     <div class="nav-container">
-      <a href="#" class="nav-logo">
-        <span class="nav-logo-icon">
-          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M16 2L2 10V22L16 30L30 22V10L16 2Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
-            <path d="M16 8L8 13V20L16 25L24 20V13L16 8Z" stroke="currentColor" stroke-width="1" fill="none"/>
-          </svg>
-        </span>
-        <span class="nav-logo-text">Athenian</span>
-      </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#services" class="nav-link">Services</a></li>
-        <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="#offers" class="nav-link">Offers</a></li>
-        <li><a href="#gallery" class="nav-link">Gallery</a></li>
-        <li><a href="#testimonials" class="nav-link">Reviews</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+      <a href="#" class="nav-brand">Athenian</a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-      <a href="tel:+919220973268" class="nav-cta nav-cta--desktop">Book Now</a>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="hero" id="hero">
-    <div class="hero-image-wrapper">
-      <img src="https://source.unsplash.com/random/800x600/?q=luxury-salon,hero.jpg" alt="Luxury salon interior with elegant lighting and styling stations" class="hero-image" loading="eager">
-      <div class="hero-overlay"></div>
+  <section class="hero">
+    <div class="hero-media">
+      <img src="https://source.unsplash.com/random/1920x1080/?luxury-salon-interior" alt="Luxury salon interior">
     </div>
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-label">South Extension I, New Delhi</p>
-      <h1 class="hero-title">Where Elegance <br>Meets Expertise</h1>
-      <p class="hero-subtitle">Delhi's premier luxury unisex salon. Experience world-class hair, skin, makeup & nail artistry in an atmosphere of refined sophistication.</p>
-      <div class="hero-actions">
-        <a href="tel:+919220973268" class="btn btn--primary">Book Appointment</a>
-        <a href="https://wa.me/911141555555" class="btn btn--outline">WhatsApp Us</a>
-      </div>
-      <div class="hero-badges">
-        <div class="hero-badge">
-          <span class="hero-badge-num">25+</span>
-          <span class="hero-badge-text">Years of Excellence</span>
-        </div>
-        <div class="hero-badge">
-          <span class="hero-badge-num">10K+</span>
-          <span class="hero-badge-text">Happy Clients</span>
-        </div>
-        <div class="hero-badge">
-          <span class="hero-badge-num">50+</span>
-          <span class="hero-badge-text">Expert Stylists</span>
-        </div>
-      </div>
+      <h1 class="hero-title">Elevate Your Beauty</h1>
+      <p class="hero-subtitle">South Extension I • New Delhi</p>
+      <a href="tel:+919220973268" class="btn btn-primary">Book Consultation</a>
     </div>
-    <a href="#services" class="hero-scroll" aria-label="Scroll to services">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-        <path d="M12 5v14M5 12l7 7 7-7"/>
-      </svg>
-    </a>
   </section>
 
   <!-- Services -->
-  <section class="services" id="services">
+  <section class="section services" id="services">
     <div class="container">
-      <header class="section-header">
-        <p class="section-label">Our Expertise</p>
-        <h2 class="section-title">Signature Services</h2>
-        <p class="section-subtitle">Curated treatments crafted with precision, delivered with care.</p>
-      </header>
+      <h2 class="section-title">Signature Services</h2>
       <div class="services-grid">
-        <article class="service-card">
-          <div class="service-card-img">
-            <img src="https://source.unsplash.com/random/800x600/?q=luxury-salon,service-hair.jpg" alt="Hair styling and colouring at Athenian Salon" loading="lazy">
-          </div>
-          <div class="service-card-body">
-            <span class="service-card-num">01</span>
-            <h3 class="service-card-title">Hair</h3>
-            <p class="service-card-desc">Precision cuts, creative colour, balayage, keratin & botox treatments by award-winning stylists.</p>
-            <a href="tel:+919220973268" class="service-card-link">Book Hair Service</a>
-          </div>
-        </article>
-        <article class="service-card">
-          <div class="service-card-img">
-            <img src="https://source.unsplash.com/random/800x600/?q=luxury-salon,service-nails.jpg" alt="Luxury nail art and manicure services" loading="lazy">
-          </div>
-          <div class="service-card-body">
-            <span class="service-card-num">02</span>
-            <h3 class="service-card-title">Nails</h3>
-            <p class="service-card-desc">Gel extensions, nail art, spa manicures & pedicures using premium international products.</p>
-            <a href="tel:+919220973268" class="service-card-link">Book Nail Service</a>
-          </div>
-        </article>
-        <article class="service-card">
-          <div class="service-card-img">
-            <img src="https://source.unsplash.com/random/800x600/?q=luxury-salon,service-makeup.jpg" alt="Bridal and event makeup services" loading="lazy">
-          </div>
-          <div class="service-card-body">
-            <span class="service-card-num">03</span>
-            <h3 class="service-card-title">Makeup</h3>
-            <p class="service-card-desc">Bridal, editorial & occasion makeup with premium products for a flawless, radiant finish.</p>
-            <a href="tel:+919220973268" class="service-card-link">Book Makeup</a>
-          </div>
-        </article>
-        <article class="service-card">
-          <div class="service-card-img">
-            <img src="https://source.unsplash.com/random/800x600/?q=luxury-salon,service-skin.jpg" alt="Advanced skin treatments and facials" loading="lazy">
-          </div>
-          <div class="service-card-body">
-            <span class="service-card-num">04</span>
-            <h3 class="service-card-title">Skin</h3>
-            <p class="service-card-desc">HydraFacial, chemical peels, anti-ageing therapies & bespoke skincare by certified aestheticians.</p>
-            <a href="tel:+919220973268" class="service-card-link">Book Skin Service</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section class="experience" id="experience">
-    <div class="container">
-      <div class="experience-layout">
-        <div class="experience-visual">
-          <div class="experience-img-main">
-            <img src="https://source.unsplash.com/random/800x600/?q=luxury-salon,experience.jpg" alt="Expert stylist at work in a luxury salon environment" loading="lazy">
-          </div>
-          <div class="experience-img-accent">
-            <img src="https://source.unsplash.com/random/800x600/?q=luxury-salon,experience-accent.jpg" alt="Close-up of premium salon product" loading="lazy">
-          </div>
-          <div class="experience-stat">
-            <span class="experience-stat-num">25+</span>
-            <span class="experience-stat-label">Years of<br>Crafting Beauty</span>
-          </div>
+        <div class="service-card">
+          <img src="https://source.unsplash.com/random/600x400/?hair-styling" alt="Hair Services">
+          <h3>Hair</h3>
+          <p>Precision cuts, colour, keratin & botox treatments</p>
         </div>
-        <div class="experience-content">
-          <p class="section-label">The Athenian Experience</p>
-          <h2 class="section-title">A Legacy of Luxury</h2>
-          <p class="experience-text">Since 1999, Athenian Salon has redefined beauty in Delhi. Our South Extension flagship blends timeless techniques with the latest global trends, delivering personalised transformations in a sanctuary of calm.</p>
-          <p class="experience-text">Every visit begins with a one-on-one consultation. Our internationally trained artists understand your features, lifestyle & aspirations — then craft a look that is uniquely yours.</p>
-          <ul class="experience-list">
-            <li>Internationally certified stylists & aestheticians</li>
-            <li>Premium product partnerships: Kérastase, L'Oréal, OPI, MAC</li>
-            <li>Hygiene-first protocols with sterilised tools & disposable liners</li>
-            <li>Complimentary refreshments & valet parking</li>
-          </ul>
-          <a href="tel:+919220973268" class="btn btn--primary">Book a Consultation</a>
+        <div class="service-card">
+          <img src="https://source.unsplash.com/random/600x400/?nail-art" alt="Nail Services">
+          <h3>Nails</h3>
+          <p>Gel extensions, spa manicures & luxury nail art</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Before & After -->
-  <section class="before-after" id="before-after">
-    <div class="container">
-      <header class="section-header">
-        <p class="section-label">Real Results</p>
-        <h2 class="section-title">Before & After</h2>
-        <p class="section-subtitle">Slide to see the Athenian transformation.</p>
-      </header>
-      <div class="ba-slider" id="baSlider">
-        <div class="ba-img ba-img--after">
-          <img src="https://source.unsplash.com/random/800x600/?q=luxury-salon,after.jpg" alt="After transformation — styled hair and makeup" loading="lazy">
+        <div class="service-card">
+          <img src="https://source.unsplash.com/random/600x400/?makeup-artist" alt="Makeup Services">
+          <h3>Makeup</h3>
+          <p>Bridal, editorial & occasion makeup by experts</p>
         </div>
-        <div class="ba-img ba-img--before" id="baBefore">
-          <img src="https://source.unsplash.com/random/800x600/?q=luxury-salon,before.jpg" alt="Before transformation — natural look" loading="lazy">
-        </div>
-        <button class="ba-handle" id="baHandle" aria-label="Drag to compare before and after">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M9 18l-6-6 6-6M15 6l6 6-6 6"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Offers -->
-  <section class="offers" id="offers">
-    <div class="container">
-      <header class="section-header">
-        <p class="section-label">Limited Time</p>
-        <h2 class="section-title">Featured Offers</h2>
-        <p class="section-subtitle">Exclusive treats for our discerning clientele.</p>
-      </header>
-      <div class="offers-grid">
-        <div class="offer-card offer-card--featured">
-          <div class="offer-card-badge">Most Popular</div>
-          <h3 class="offer-card-title">Bridal Package</h3>
-          <p class="offer-card-desc">Complete bridal hair, makeup & skin prep. Includes 3 pre-wedding sessions.</p>
-          <div class="offer-card-price">
-            <span class="offer-card-old">₹55,000</span>
-            <span class="offer-card-new">₹42,999</span>
-          </div>
-          <a href="tel:+919220973268" class="btn btn--primary btn--small">Claim Offer</a>
-        </div>
-        <div class="offer-card">
-          <h3 class="offer-card-title">Keratin Revival</h3>
-          <p class="offer-card-desc">Premium keratin smoothing treatment with after-care kit. Valid Mon–Thu.</p>
-          <div class="offer-card-price">
-            <span class="offer-card-old">₹12,000</span>
-            <span class="offer-card-new">₹8,999</span>
-          </div>
-          <a href="tel:+919220973268" class="btn btn--outline btn--small">Claim Offer</a>
-        </div>
-        <div class="offer-card">
-          <h3 class="offer-card-title">HydraFacial Glow</h3>
-          <p class="offer-card-desc">Signature 6-step HydraFacial with LED therapy & neck treatment.</p>
-          <div class="offer-card-price">
-            <span class="offer-card-old">₹7,500</span>
-            <span class="offer-card-new">₹5,499</span>
-          </div>
-          <a href="tel:+919220973268" class="btn btn--outline btn--small">Claim Offer</a>
+        <div class="service-card">
+          <img src="https://source.unsplash.com/random/600x400/?facial-treatment" alt="Skin Services">
+          <h3>Skin</h3>
+          <p>HydraFacial, peels & custom skincare routines</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Gallery -->
-  <section class="gallery" id="gallery">
+  <section class="section gallery" id="gallery">
     <div class="container">
-      <header class="section-header">
-        <p class="section-label">Portfolio</p>
-        <h2 class="section-title">Our Work</h2>
-        <p class="section-subtitle">A glimpse into the art we create every day.</p>
-      </header>
+      <h2 class="section-title">Our Work</h2>
       <div class="gallery-grid">
-        <figure class="gallery-item gallery-item--tall">
-          <img src="https://source.unsplash.com/random/800x600/?q=luxury-salon,gallery1.jpg" alt="Bridal hairstyle and makeup" loading="lazy">
-          <figcaption>Bridal Glam</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="https://source.unsplash.com/random/800x600/?q=luxury-salon,gallery2.jpg" alt="Creative hair colour transformation" loading="lazy">
-          <figcaption>Colour Mastery</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="https://source.unsplash.com/random/800x600/?q=luxury-salon,gallery3.jpg" alt="Precision men’s haircut and grooming" loading="lazy">
-          <figcaption>Gentlemen’s Cut</figcaption>
-        </figure>
-        <figure class="gallery-item gallery-item--wide">
-          <img src="https://source.unsplash.com/random/800x600/?q=luxury-salon,gallery4.jpg" alt="Luxury nail art design" loading="lazy">
-          <figcaption>Nail Artistry</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="https://source.unsplash.com/random/800x600/?q=luxury-salon,gallery5.jpg" alt="Evening event makeup look" loading="lazy">
-          <figcaption>Evening Glow</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="https://source.unsplash.com/random/800x600/?q=luxury-salon,gallery6.jpg" alt="Skin treatment results" loading="lazy">
-          <figcaption>Skin Rejuvenation</figcaption>
-        </figure>
+        <img src="https://source.unsplash.com/random/600x800/?bridal-makeup" alt="Bridal Makeup">
+        <img src="https://source.unsplash.com/random/600x600/?hair-colour" alt="Hair Colour">
+        <img src="https://source.unsplash.com/random/600x600/?men-haircut" alt="Men's Grooming">
+        <img src="https://source.unsplash.com/random/600x800/?nail-design" alt="Nail Art">
       </div>
     </div>
   </section>
 
   <!-- Testimonials -->
-  <section class="testimonials" id="testimonials">
+  <section class="section testimonials" id="testimonials">
     <div class="container">
-      <header class="section-header">
-        <p class="section-label">Client Love</p>
-        <h2 class="section-title">What They Say</h2>
-        <p class="section-subtitle">Words from the people who trust us with their look.</p>
-      </header>
+      <h2 class="section-title">Client Stories</h2>
       <div class="testimonials-grid">
         <blockquote class="testimonial">
-          <div class="testimonial-stars" aria-label="5 stars">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <p class="testimonial-text">"The bridal package was an absolute dream. My makeup lasted 14 hours, and I have never felt more beautiful. The team is incredibly professional."</p>
-          <footer class="testimonial-author">
-            <img src="https://source.unsplash.com/random/800x600/?q=luxury-salon,client1.jpg" alt="" class="testimonial-avatar" loading="lazy">
-            <div>
-              <cite class="testimonial-name">Priya Malhotra</cite>
-              <span class="testimonial-role">Bridal Client</span>
-            </div>
-          </footer>
+          <p>"The bridal package was perfection. My makeup stayed flawless for 14 hours!"</p>
+          <cite>— Priya M., Bride</cite>
         </blockquote>
         <blockquote class="testimonial">
-          <div class="testimonial-stars" aria-label="5 stars">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <p class="testimonial-text">"I have been coming here for 8 years. The stylists actually listen. My balayage is always on point, and the scalp massage during shampoo is the best in Delhi."</p>
-          <footer class="testimonial-author">
-            <img src="https://source.unsplash.com/random/800x600/?q=luxury-salon,client2.jpg" alt="" class="testimonial-avatar" loading="lazy">
-            <div>
-              <cite class="testimonial-name">Ananya Sharma</cite>
-              <span class="testimonial-role">Regular Client</span>
-            </div>
-          </footer>
-        </blockquote>
-        <blockquote class="testimonial">
-          <div class="testimonial-stars" aria-label="5 stars">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <p class="testimonial-text">"The gentlemen's grooming experience is top-tier. Clean fades, hot-towel shaves, and great conversation. My go-to spot before any important meeting."</p>
-          <footer class="testimonial-author">
-            <img src="https://source.unsplash.com/random/800x600/?q=luxury-salon,client3.jpg" alt="" class="testimonial-avatar" loading="lazy">
-            <div>
-              <cite class="testimonial-name">Rohan Mehta</cite>
-              <span class="testimonial-role">Corporate Client</span>
-            </div>
-          </footer>
+          <p>"Best hair transformation I've had. The team truly understands your style."</p>
+          <cite>— Rohan S., Regular Client</cite>
         </blockquote>
       </div>
     </div>
   </section>
 
-  <!-- Contact / Footer -->
-  <footer class="contact" id="contact">
+  <!-- Contact -->
+  <section class="section contact" id="contact">
     <div class="container">
-      <div class="contact-layout">
-        <div class="contact-brand">
-          <a href="#" class="contact-logo">
-            <span class="contact-logo-icon">
-              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M16 2L2 10V22L16 30L30 22V10L16 2Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                <path d="M16 8L8 13V20L16 25L24 20V13L16 8Z" stroke="currentColor" stroke-width="1" fill="none"/>
-              </svg>
-            </span>
-            <span>Athenian Salon</span>
-          </a>
-          <p class="contact-tagline">Luxury unisex salon in the heart of South Delhi. Transforming looks, elevating confidence since 1999.</p>
-          <div class="contact-socials">
-            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
-            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-          </div>
+      <h2 class="section-title">Visit Us</h2>
+      <div class="contact-grid">
+        <div>
+          <h3>South Extension I</h3>
+          <p>New Delhi, India</p>
+          <p><strong>Call:</strong> <a href="tel:+919220973268">092209 73268</a></p>
+          <p><strong>Email:</strong> <a href="mailto:info@atheniansalon.com">info@atheniansalon.com</a></p>
         </div>
-        <div class="contact-info">
-          <h4 class="contact-heading">Visit Us</h4>
-          <address class="contact-address">
-            E-15, South Extension I,<br>
-            New Delhi — 110049, India
-          </address>
-          <p class="contact-hours">Open daily: 10:00 AM – 8:00 PM</p>
-        </div>
-        <div class="contact-info">
-          <h4 class="contact-heading">Reach Out</h4>
-          <a href="tel:+919220973268" class="contact-link">+91 11 4155 5555</a>
-          <a href="tel:+919810012345" class="contact-link">+91 98100 12345</a>
-          <a href="mailto:info@atheniansalon.com" class="contact-link">info@atheniansalon.com</a>
-        </div>
-        <div class="contact-info">
-          <h4 class="contact-heading">Quick Links</h4>
-          <a href="#services" class="contact-link">Services</a>
-          <a href="#offers" class="contact-link">Offers</a>
-          <a href="#gallery" class="contact-link">Gallery</a>
-          <a href="#testimonials" class="contact-link">Reviews</a>
-        </div>
-      </div>
-      <div class="contact-bottom">
-        <p>&copy; 2024 Athenian Salon Delhi. All rights reserved.</p>
-        <p>Designed for elegance. Built for results.</p>
       </div>
     </div>
-  </footer>
-
-  <!-- Sticky Mobile CTA -->
-  <div class="sticky-cta" id="stickyCta">
-    <a href="tel:+919220973268" class="sticky-cta-btn sticky-cta-btn--call">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-      Call Now
-    </a>
-    <a href="https://wa.me/911141555555" class="sticky-cta-btn sticky-cta-btn--whatsapp">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      WhatsApp
-    </a>
-  </div>
+  </section>
 
   <script src="script.js"></script>
-</body>
-</html>
+</body></html>
