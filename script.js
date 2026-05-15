@@ -1,59 +1,147 @@
 /* ============================================
-   ATHENIAN SALON — Interactive Script
+   ATHENIAN SALON — Interactions & Animations
    ============================================ */
 
 (function () {
   'use strict';
 
+  // Elements
   const nav = document.getElementById('nav');
   const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  const stickyCta = document.getElementById('stickyCta');
+  const navMenu = document.getElementById('navMenu');
+  const navLinks = navMenu.querySelectorAll('a');
+  const reviewsTrack = document.querySelector('.reviews-track');
+  const reviewsDots = document.querySelectorAll('.reviews-dot');
+  const contactForm = document.getElementById('contactForm');
 
-  /* ------------------------------------------
-     NAV SCROLL EFFECT
-     ------------------------------------------ */
+  // ==========================================
+  // NAV SCROLL EFFECT
+  // ==========================================
   function onScroll() {
-    const scrolled = window.scrollY > 40;
-    nav.classList.toggle('nav--scrolled', scrolled);
-
-    // Show/hide sticky CTA based on hero visibility
-    if (stickyCta) {
-      const hero = document.getElementById('hero');
-      if (hero) {
-        const heroBottom = hero.getBoundingClientRect().bottom;
-        stickyCta.style.transform = heroBottom > 0 ? 'translateY(100%)' : 'translateY(0)';
-        stickyCta.style.opacity = heroBottom > 0 ? '0' : '1';
-      }
+    if (window.scrollY > 40) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
     }
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ------------------------------------------
-     MOBILE MENU TOGGLE
-     ------------------------------------------ */
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', !expanded);
-      navLinks.classList.toggle('nav-links--open');
-      document.body.style.overflow = !expanded ? 'hidden' : '';
-    });
+  // ==========================================
+  // MOBILE NAV TOGGLE
+  // ==========================================
+  navToggle.addEventListener('click', () => {
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !expanded);
+    navMenu.classList.toggle('open');
+    document.body.style.overflow = expanded ? '' : 'hidden';
+  });
 
-    // Close menu on link click
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navToggle.setAttribute('aria-expanded', 'false');
-        navLinks.classList.remove('nav-links--open');
-        document.body.style.overflow = '';
-      });
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.setAttribute('aria-expanded', 'false');
+      navMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // ==========================================
+  // SCROLL REVEAL (IntersectionObserver)
+  // ==========================================
+  const revealEls = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // ==========================================
+  // TESTIMONIAL SLIDER
+  // ==========================================
+  let currentSlide = 0;
+  const totalSlides = reviewsDots.length;
+
+  function goToSlide(index) {
+    currentSlide = index;
+    const slideWidth = reviewsTrack.children[0].offsetWidth + 20; // gap
+    reviewsTrack.style.transform = `translateX(-${index * slideWidth}px)`;
+    reviewsDots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
     });
   }
 
-  /* ------------------------------------------
-     SMOOTH SCROLL FOR ANCHOR LINKS
-     ------------------------------------------ */
+  reviewsDots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      goToSlide(parseInt(dot.dataset.slide));
+    });
+  });
+
+  // Auto-advance every 5s
+  setInterval(() => {
+    goToSlide((currentSlide + 1) % totalSlides);
+  }, 5000);
+
+  // Handle resize
+  window.addEventListener('resize', () => {
+    goToSlide(currentSlide);
+  });
+
+  // Touch swipe support
+  let startX = 0;
+  let isDragging = false;
+  reviewsTrack.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  }, { passive: true });
+  reviewsTrack.addEventListener('touchmove', () => {
+    isDragging = false; // only trigger on swipe, not scroll
+  }, { passive: true });
+  reviewsTrack.addEventListener('touchend', (e) => {
+    if (!isDragging) return;
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0 && currentSlide < totalSlides - 1) {
+        goToSlide(currentSlide + 1);
+      } else if (diff < 0 && currentSlide > 0) {
+        goToSlide(currentSlide - 1);
+      }
+    }
+  });
+
+  // ==========================================
+  // CONTACT FORM
+  // ==========================================
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !phone) {
+        alert('Please fill in your name and phone number.');
+        return;
+      }
+
+      // Build WhatsApp message
+      const text = `Hi Athenian Salon, I'm ${name}. I'm interested in ${service || 'your services'}. ${message ? 'Message: ' + message : ''} Please call me back at ${phone}.`;
+      const waUrl = `https://wa.me/918011110064?text=${encodeURIComponent(text)}`;
+      window.open(waUrl, '_blank');
+    });
+  }
+
+  // ==========================================
+  // SMOOTH SCROLL FOR ANCHOR LINKS
+  // ==========================================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
@@ -67,97 +155,5 @@
       }
     });
   });
-
-  /* ------------------------------------------
-     BEFORE & AFTER SLIDER
-     ------------------------------------------ */
-  const baSlider = document.getElementById('baSlider');
-  const baBefore = document.getElementById('baBefore');
-  const baHandle = document.getElementById('baHandle');
-
-  if (baSlider && baBefore && baHandle) {
-    let isDragging = false;
-
-    function updateSlider(clientX) {
-      const rect = baSlider.getBoundingClientRect();
-      let x = clientX - rect.left;
-      x = Math.max(0, Math.min(x, rect.width));
-      const pct = (x / rect.width) * 100;
-      baBefore.style.width = pct + '%';
-      baHandle.style.left = pct + '%';
-    }
-
-    baHandle.addEventListener('mousedown', () => { isDragging = true; });
-    baHandle.addEventListener('touchstart', () => { isDragging = true; }, { passive: true });
-
-    window.addEventListener('mouseup', () => { isDragging = false; });
-    window.addEventListener('touchend', () => { isDragging = false; });
-
-    window.addEventListener('mousemove', (e) => {
-      if (!isDragging) return;
-      updateSlider(e.clientX);
-    });
-
-    window.addEventListener('touchmove', (e) => {
-      if (!isDragging) return;
-      updateSlider(e.touches[0].clientX);
-    }, { passive: true });
-
-    // Click to jump
-    baSlider.addEventListener('click', (e) => {
-      if (e.target === baHandle) return;
-      updateSlider(e.clientX);
-    });
-  }
-
-  /* ------------------------------------------
-     SCROLL REVEAL ANIMATION
-     ------------------------------------------ */
-  const revealEls = document.querySelectorAll(
-    '.service-card, .offer-card, .testimonial, .gallery-item, .experience-layout'
-  );
-
-  if ('IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-
-    revealEls.forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(24px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      revealObserver.observe(el);
-    });
-  } else {
-    revealEls.forEach(el => { el.style.opacity = '1'; });
-  }
-
-  /* ------------------------------------------
-     NAV LINK ACTIVE STATE
-     ------------------------------------------ */
-  const sections = document.querySelectorAll('section[id]');
-  const navLinkEls = document.querySelectorAll('.nav-link');
-
-  function setActiveLink() {
-    const scrollPos = window.scrollY + nav.offsetHeight + 80;
-    let activeId = '';
-    sections.forEach(sec => {
-      if (sec.offsetTop <= scrollPos) {
-        activeId = sec.getAttribute('id');
-      }
-    });
-    navLinkEls.forEach(link => {
-      const isActive = link.getAttribute('href') === '#' + activeId;
-      link.style.color = isActive ? 'var(--gold-500)' : '';
-    });
-  }
-  window.addEventListener('scroll', setActiveLink, { passive: true });
-  setActiveLink();
 
 })();
